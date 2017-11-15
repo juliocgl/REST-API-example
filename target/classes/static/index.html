@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/auth.js"></script>
+<script type="text/javascript" src="/js/products.js"></script>
+</head>
+<body style="margin: 20px;">
+	<div id="login" class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="user">User</label><input id="user" type="text"
+						placeholder="User" class="form-control" />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="password">Password</label> <input id="password"
+						type="password" placeholder="Password" class="form-control" />
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<button id="loginButton" type="button" class="btn btn-primary"
+				title="Login" onclick="login();">Login</button>
+		</div>
+	</div>
+	<div id="list" class="panel panel-default" style="display: none;">
+		<table id="products" class="table table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Available</th>
+					<th>Price</th>
+					<th>
+						<div class="btn-group pull-right" role="group"
+							aria-label="Product list options">
+							<button type="button" class="btn btn-default btn-xs"
+								title="Refresh" onclick="listProducts();">
+								<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs"
+								title="New product" onclick="newProduct();">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+							</button>
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="detail" class="panel panel-info" style="display: none;">
+		<div class="panel-heading">Product information</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="id">Id</label><input id="id" type="text"
+						placeholder="Id" class="form-control" disabled="disabled" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="name">Name</label> <input id="name" type="text"
+						placeholder="Name" class="form-control" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="available">Available</label>
+					<div class="available">
+						<input id="available" type="checkbox" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="price">Price</label><input id="price" type="text"
+						placeholder="Price" class="form-control" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="description">Description</label><input id="description"
+						type="text" placeholder="Description" class="form-control" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="dateCreated">Creation date</label><input
+						id="dateCreated" type="text" placeholder="Date created"
+						class="form-control" disabled="disabled" />
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<button type="button" class="btn btn-success pull-right" title="Save"
+				onclick="saveProduct();">Save</button>
+			<button type="button" class="btn btn-danger" title="Cancel"
+				onclick="cancelEdition();">Cancel</button>
+		</div>
+	</div>
+</body>
+</html>
